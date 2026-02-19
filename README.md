@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📊 Sales Analytics Platform
 
 Projeto para aprendizado de Python, APIs, Dashboards e Docker.
@@ -12,3 +13,7 @@ Projeto para aprendizado de Python, APIs, Dashboards e Docker.
 ```bash
 git clone https://github.com/Gedionir/sales-analytics-platform.git
 cd sales-analytics-platform
+=======
+# sales-analytics-platform
+Plataforma de Análise de Vendas
+>>>>>>> 120b10826447558fb4f74a27505b718a9d984165
