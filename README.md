@@ -3,7 +3,7 @@
 
 Plataforma completa para análise de vendas, composta por uma API REST desenvolvida com FastAPI e um dashboard interativo construído com Streamlit. Toda a aplicação é containerizada com Docker, facilitando a implantação e escalabilidade.
 
-![Dashboard Preview](image/Painel_principal.png) <!-- Substitua pelo link real de uma imagem do dashboard -->
+![Dashboard Preview](image/Painel_indicador.png) <!-- Substitua pelo link real de uma imagem do dashboard -->
 
 ---
 
