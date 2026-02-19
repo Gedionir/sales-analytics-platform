@@ -111,7 +111,7 @@ POST	/api/v1/sales/batch	Importar múltiplas vendas (lote)
 
 ![Dashboard Preview](image/Painel_principal.png)
 ![Dashboard Preview](image/Painel_analise.png)
-![Dashboard Preview](image/Painel_sobre.png)
+![Dashboard Preview](image/Painel_sobre_.png)
 ![Dashboard Preview](image/Painel_import_dados.png)
 ![Dashboard Preview](image/Painel_inserir_manualmente.png)
 ![Dashboard Preview](image/Painel_integracao.png)
