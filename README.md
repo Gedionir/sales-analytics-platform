@@ -9,15 +9,15 @@ Plataforma completa para análise de vendas, composta por uma API REST desenvolv
 
 ## ✨ Funcionalidades
 
-- 📈 **Dashboard interativo** com métricas de vendas em tempo real
-- 🔌 **API RESTful** para consulta e importação de dados
-- 📤 **Importação de dados** via upload de arquivos CSV/Excel ou inserção manual
-- 🗃️ **Banco de dados relacional** PostgreSQL para persistência
-- ⚡ **Cache com Redis** para melhor performance
-- 🐳 **Containerização com Docker** e orquestração com Docker Compose
-- 🔄 **Recarregamento automático** da API durante o desenvolvimento
-- 📊 **Visualizações gráficas** com Plotly
-- 🧪 **Dados de exemplo** para testes e demonstração
+- **Dashboard interativo** com métricas de vendas em tempo real
+- **API RESTful** para consulta e importação de dados
+- **Importação de dados** via upload de arquivos CSV/Excel ou inserção manual
+- **Banco de dados relacional** PostgreSQL para persistência
+- **Cache com Redis** para melhor performance
+- **Containerização com Docker** e orquestração com Docker Compose
+- **Recarregamento automático** da API durante o desenvolvimento
+- **Visualizações gráficas** com Plotly
+- **Dados de exemplo** para testes e demonstração
 
 ---
 
@@ -54,7 +54,7 @@ Plataforma completa para análise de vendas, composta por uma API REST desenvolv
    cd sales-analytics-platform
 
 ---
-## Ínicie o serviçocom Docker Compose
+## Ínicie o serviço com Docker Compose
 
 docker compose up -d
 
@@ -109,6 +109,7 @@ POST	/api/v1/sales/batch	Importar múltiplas vendas (lote)
 
 ## Capturas de Tela
 
+![Dashboard Preview](image/Painel_principal.png)
 
 
 ---
