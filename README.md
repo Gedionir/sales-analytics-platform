@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 📊 Sales Analytics Platform
 
 Plataforma completa para análise de vendas, composta por uma API REST desenvolvida com FastAPI e um dashboard interativo construído com Streamlit. Toda a aplicação é containerizada com Docker, facilitando a implantação e escalabilidade.
@@ -205,5 +205,3 @@ Crie também um arquivo `COMMANDS.md` separado com os comandos utilizados:
 | `docker volume prune`                          | Remove volumes não utilizados                  |
 
 ---
-
->>>>>>> 120b10826447558fb4f74a27505b718a9d984165
