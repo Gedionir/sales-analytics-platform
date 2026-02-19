@@ -1,0 +1,81 @@
+services:
+  # Banco de dados principal
+  postgres:
+    image: postgres:15
+    container_name: sales_postgres
+    environment:
+      POSTGRES_DB: sales_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sales_network
+
+  # Redis para cache
+  redis:
+    image: redis:7-alpine
+    container_name: sales_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - sales_network
+
+  # API FastAPI
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: sales_api
+    environment:
+      DATABASE_URL: postgresql://admin:admin123@postgres/sales_db
+      REDIS_URL: redis://redis:6379
+      SECRET_KEY: minha_chave_secreta_123
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    volumes:
+      - ./app:/app/app
+      - ./data_pipeline:/app/data_pipeline
+    networks:
+      - sales_network
+    command: uvicorn app.api.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir /app/app/api
+
+  # Dashboard Streamlit
+  dashboard:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dashboard
+    container_name: sales_dashboard
+    environment:
+      API_URL: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    volumes:
+      - ./app/dashboard:/app/app/dashboard
+    networks:
+      - sales_network
+    command: streamlit run app/dashboard/app.py --server.port=8501 --server.address=0.0.0.0
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  sales_network:
+    driver: bridge

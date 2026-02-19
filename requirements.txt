@@ -1,0 +1,29 @@
+# Core - versões estáveis
+pandas==1.5.3
+numpy==1.24.3
+python-dotenv==1.0.0
+
+# Web
+fastapi==0.104.1
+uvicorn==0.24.0.post1
+streamlit==1.28.2
+
+# Database
+sqlalchemy>=1.4.28,<2.0
+psycopg2-binary==2.9.9
+redis==5.0.1
+
+# Data Pipeline
+apache-airflow==2.7.3
+apache-airflow-providers-postgres==5.8.0
+
+# Visualization
+plotly==5.18.0
+
+# Development
+pytest==7.4.3
+black==23.12.1
+requests==2.31.0
+
+# HTTP client
+httpx==0.25.2

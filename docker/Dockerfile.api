@@ -1,0 +1,40 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Instalar dependências do sistema
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copiar requirements
+COPY requirements.txt .
+
+# Instalar em etapas para evitar backtracking
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# Primeiro instalar numpy e pandas (mais problemáticos)
+RUN pip install --no-cache-dir numpy==1.26.4 pandas==2.2.3
+
+# Depois instalar o restante
+RUN pip install --no-cache-dir \
+    fastapi==0.115.11 \
+    uvicorn==0.34.0 \
+    streamlit==1.41.1 \
+    sqlalchemy==2.0.38 \
+    psycopg2-binary==2.9.10 \
+    redis==5.2.1 \
+    plotly==5.24.1 \
+    python-dotenv==1.0.1 \
+    pytest==8.3.4 \
+    black==24.10.0 \
+    requests==2.32.3
+
+# Copiar código
+COPY app/ ./app/
+COPY data_pipeline/ ./data_pipeline/
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app.api.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
