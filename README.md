@@ -109,6 +109,7 @@ POST	/api/v1/sales/batch	Importar múltiplas vendas (lote)
 
 ## Capturas de Tela
 
+![Dashboard Preview](image/Painel_docker.png)
 ![Dashboard Preview](image/Painel_principal.png)
 ![Dashboard Preview](image/Painel_analise.png)
 ![Dashboard Preview](image/Painel_sobre_.png)
