@@ -146,8 +146,6 @@ Desenvolvido por Gedionir Amaral Paim como projeto educacional para demonstrar b
 ---
 
 
----
-
 ## 🔧 Comandos úteis (lista para referência)
 
 Crie também um arquivo `COMMANDS.md` separado com os comandos utilizados:
